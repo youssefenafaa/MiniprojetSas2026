@@ -314,7 +314,22 @@ if(trouvee==false){
 }
 }
 
+function trietrajets(){
+    for (let j=0;j<=trips.length-1;j++){
+    for (let i=0;i < trips.length-1; i++){
+    if(trips[i].price > trips[i+1].price){
+        let temp =trips[i+1];
+        trips[i+1] = trips[i];
+        trips[i]=temp;
 
+    }
+    } 
+  }
+console.log(trips);
+
+
+
+}
 
 
 
