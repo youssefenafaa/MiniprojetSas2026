@@ -231,6 +231,7 @@ for ( ;i<=trips.length-1;i++){
     id: IdCont++,
     name:nom,
     tripId:idtrajet,
+    trajet:trips[i].departure + "--->" + trips[i].destination,            
     seatNumber:51-trips[i].availableSeats,
     price: trips[i].price
    }
@@ -242,8 +243,8 @@ console.log(ticket);
 
 function affichticket(){
     for (let i=0;i<=tickets.length-1;i++){
-        console.log(tickets[i])
-    }
+        console.log(tickets[i]);
+       }
 }
 
 function annuleticket(){
@@ -264,6 +265,27 @@ function annuleticket(){
     }
 }
 
+function recherchticket(){  
+    let nomrech;
+    let trouv=false;
+    do {
+         nomrech =prompt("nom du passager:")
+}   while(nomrech.trim() ==="");
+
+for(let i=0;i<=tickets.length-1;i++){
+    if(nomrech==tickets[i].name){
+        console.log(tickets[i]);
+        trouv=true;
+        break;
+    }
+    }
+  if(trouv==false){
+        console.log("nom est n'est pas connue");
+
+    }
+    
+
+}
 
 
 
