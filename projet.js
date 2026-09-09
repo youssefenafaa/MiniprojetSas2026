@@ -238,8 +238,8 @@ for ( ;i<=trips.length-1;i++){
          tickets.push(ticket);
          trips[i].availableSeats--;
 console.log("ticket achete en succes");
-console.log(ticket);
-} }   
+console.log(ticket);}
+ }   
 
 function affichticket(){
     for (let i=0;i<=tickets.length-1;i++){
@@ -294,8 +294,25 @@ for(let i=0;i<=tickets.length-1;i++){
 
 }
 
+function  filtretrajets(){
 
+let villenom;
+ let trouvee=false;
+    do {
+         villenom=prompt("nom du ville:")
+}      while(villenom.trim() ==="");
 
+for (let i=0;i<trips.length;i++){
+    if(villenom.toLowerCase()==trips[i].departure.toLowerCase()){
+        console.log(trips[i].departure +"--->"+ trips[i].destination +":"+trips[i].price);
+                  trouvee=true;
+                   
+    }
+}
+if(trouvee==false){
+    console.log("aucun ville de ce nom");
+}
+}
 
 
 
