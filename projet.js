@@ -240,6 +240,11 @@ console.log("ticket achete en succes");
 console.log(ticket);
 } }   
 
+function affichticket(){
+    for (let i=0;i<=tickets.length-1;i++){
+        console.log(tickets[i])
+    }
+}
 
  
 
