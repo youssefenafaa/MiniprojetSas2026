@@ -246,9 +246,23 @@ function affichticket(){
     }
 }
 
- 
-
-
+function annuleticket(){
+    let idannule;
+    let fond=false;
+    idannule=Number(prompt("enter votre id ---->"))
+    for(let i=0;i<=tickets.length-1;i++){
+        if(idannule==tickets[i].id){
+            fond=true;
+            tickets.splice(i,1);
+            trips[i].availableSeats++;
+            console.log("ticket anulle en succes");
+            break;
+        }
+    }
+    if(fond==false){
+        console.log("id introuvable");
+    }
+}
 
 
 
