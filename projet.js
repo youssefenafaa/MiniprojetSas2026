@@ -1,3 +1,6 @@
+const prompt = require("prompt-sync")();
+let tickets=[];
+let IdCont=1;
 const trips = [
     {
         id: 1,
@@ -193,6 +196,71 @@ function affichtraj(){
     }
 }
 
+function achetticket(){
+    //le nom de letullisareur
+
+    let nom;
+    let idtrajet;
+     do {
+         nom =prompt("nom du passager:")
+}while(nom.trim() ==="");
+  //id  du trajet
+do {
+     idtrajet =Number(prompt("id de trajet :"))
+}while(isNaN(idtrajet));
+
+
+
+//pour recherche id du trajet est il exicete et est ce que availableseat existe
+let i=0;
+let v= false ;
+
+for ( ;i<=trips.length-1;i++){
+    if(idtrajet==trips[i].id ){
+        if(trips[i].availableSeats >= 1) {
+        v=true;
+        break; 
+        }
+ }}
+    
+    if(v==false){
+       console.log("trajet introuvable") }
+    else{
+       //le ticket
+        let ticket={
+    id: IdCont++,
+    name:nom,
+    tripId:idtrajet,
+    seatNumber:51-trips[i].availableSeats,
+    price: trips[i].price
+   }
+tickets.push(ticket);
+trips[i].availableSeats--;
+console.log("ticket achete en succes");
+console.log(ticket);
+} }   
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
 
 
 
@@ -214,19 +282,6 @@ function affichtraj(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-const prompt = require("prompt-sync")();
 
 
 function main() {
