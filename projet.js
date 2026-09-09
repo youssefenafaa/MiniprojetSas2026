@@ -235,8 +235,8 @@ for ( ;i<=trips.length-1;i++){
     seatNumber:51-trips[i].availableSeats,
     price: trips[i].price
    }
-tickets.push(ticket);
-trips[i].availableSeats--;
+         tickets.push(ticket);
+         trips[i].availableSeats--;
 console.log("ticket achete en succes");
 console.log(ticket);
 } }   
@@ -244,6 +244,13 @@ console.log(ticket);
 function affichticket(){
     for (let i=0;i<=tickets.length-1;i++){
         console.log(tickets[i]);
+        console.log(" === TICKETS ===");
+
+        console.log("Ticket #" + tickets[i].id);
+        console.log(" Passager : "+tickets[i].name);
+         console.log ("Trajet:"+tickets[i].trajet);
+        console.log("Place : "+tickets[i].seatNumber);
+        console.log ("Prix :"+ tickets[i].price +"DH");
        }
 }
 
