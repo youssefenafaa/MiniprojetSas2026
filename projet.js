@@ -206,7 +206,7 @@ function achetticket(){
     let idtrajet;
      do {
          nom =prompt("nom du passager:")
-}while(nom.trim() ==="");
+}while(nom ==="");
   //id  du trajet
 do {
      idtrajet =Number(prompt("id de trajet :"))
@@ -310,17 +310,22 @@ function recherchticket(){
     let trouv=false;
     do {
          nomrech =prompt("nom du passager:")
-}   while(nomrech.trim() ==="");
+}   while(nomrech ==="");
 
 for(let i=0;i<=tickets.length-1;i++){
     if(nomrech==tickets[i].name){
-        console.log(tickets[i]);
+        
+        console.log("Ticket #" + tickets[i].id);
+        console.log(" Passager : "+tickets[i].name);
+        console.log ("Trajet:"+tickets[i].trajet);
+        console.log("Place : "+tickets[i].seatNumber);
+        console.log ("Prix :"+ tickets[i].price  + " DH");
         trouv=true;
         break;
     }
     }
   if(trouv==false){
-        console.log("nom est n'est pas connue");
+        console.log("nom est introuvable");
 
     }
     
@@ -333,7 +338,7 @@ let villenom;
  let trouvee=false;
     do {
          villenom=prompt("nom du ville:")
-}      while(villenom.trim() ==="");
+}      while(villenom ==="");
 
 for (let i=0;i<trips.length;i++){
     if(villenom.toLowerCase()==trips[i].departure.toLowerCase()){
@@ -390,10 +395,19 @@ console.log("votre reponse n'etait pas acceptale, svp donne moi une choix entre 
 break;
 
 }   
-}while(st!=3);}
+}while(st!=3);
+}
 
-
-
+function nombreTotaleticketsvendu(){
+    console.log("Nombre total de tickets :"+ tickets.length);
+}
+function chifffreAffaireTotal(){
+    let totale=0;
+    for(i=0;i<=tickets.length-1;i++){
+        totale+=tickets[i].price;
+    }
+    console.log("chaiffr d'affaire total :"+totale);
+}
        
 
 
