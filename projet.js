@@ -184,6 +184,9 @@ const trips = [
     }
 ];
 
+
+ 
+
 function affichtraj(){
     for(let i=0; i<=trips.length-1;i++){
         console.log("id:"+ trips[i].id);
@@ -211,22 +214,20 @@ do {
 
 
 
-//pour recherche id du trajet est il exicete et est ce que availableseat existe
+//pour recherche id du trajet est il exicete 
 let i=0;
 let v= false ;
-
+   
 for ( ;i<=trips.length-1;i++){
-    if(idtrajet==trips[i].id ){
-        if(trips[i].availableSeats >= 1) {
-        v=true;
-        break; 
-        }
- }}
+     //premier condition id est il exicete
+
+      if(idtrajet==trips[i].id ){
+         v=true;
+     
+     // est ce que availableseat existe  
+      if(trips[i].availableSeats >= 1) {
     
-    if(v==false){
-       console.log("trajet introuvable") }
-    else{
-       //le ticket
+    //cree  ticket
         let ticket={
     id: IdCont++,
     name:nom,
@@ -239,7 +240,19 @@ for ( ;i<=trips.length-1;i++){
          trips[i].availableSeats--;
 console.log("ticket achete en succes");
 console.log(ticket);}
- }   
+else {
+    console.log("train complet");
+
+}       break; }  }
+if(v==false){
+       console.log("trajet introuvable") }
+ }
+    
+    
+    
+
+
+
 
 function affichticket(){
     for (let i=0;i<=tickets.length-1;i++){
@@ -258,19 +271,34 @@ function annuleticket(){
     let idannule;
     let fond=false;
     idannule=Number(prompt("enter votre id ---->"))
+  
     for(let i=0;i<=tickets.length-1;i++){
         if(idannule==tickets[i].id){
             fond=true;
             tickets.splice(i,1);
-            trips[i].availableSeats++;
-            console.log("ticket anulle en succes");
+            trips[j].availableSeats++;
             break;
-        }
-    }
-    if(fond==false){
+            
+                }
+            
+            }
+          console.log("ticket anulle en succes");
+                
+                       
+                    
+            if(fond===false){
         console.log("id introuvable");
-    }
-}
+    }   
+                    }
+                     
+                     
+           
+           
+
+        
+    
+
+
 
 function recherchticket(){  
     let nomrech;
