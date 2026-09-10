@@ -370,10 +370,10 @@ console.log(trips);
 //bonus
 function statistique(){
     do{
+console.log("=============================================" );    
 console.log("1.Nombre total de tickets vendus");
 console.log("2.Chiffre d'affaires total");
-console.log("3. return  a menu principale");
-console.log("4. Quitter");
+console.log("3. return a menu principale");
 
 st=Number(prompt("taper votre choix entre (1-3)--->"));
 
@@ -382,16 +382,16 @@ switch(st){
    break;
    case 2: chifffreAffaireTotal();
    break;
-   case 3: main();
+   case 3: 
     break;
-    case 4:
-        break;
+    
        default :
 console.log("votre reponse n'etait pas acceptale, svp donne moi une choix entre (1-3)");
 break;
 
 }   
-}while(st!=4);}
+}while(st!=3);}
+
 
 
        
@@ -433,10 +433,11 @@ console.log("4. Annuler un ticket ");
 console.log("5. Rechercher un ticket");
 console.log("6. Filtrer les trajets");
 console.log("7. Trier les trajets");
+console.log("8. les statistique")
 console.log("0. Quitter");
 
 
-choix = Number(prompt("tapez un choix (0-7)---->"));
+choix = Number(prompt("tapez un choix (0-8)---->"));
 
 switch(choix){
     case 1: 
@@ -460,11 +461,14 @@ switch(choix){
     case 7:
     trietrajets();
     break;
+    case 8:
+     statistique();
+     break;
     case 0:
         break;
 
    default :
-console.log("votre reponse n'etait pas acceptale, svp donne moi une choix entre (0-7)");
+console.log("votre reponse n'etait pas acceptale, svp donne moi une choix entre (0-8)");
 break;
 
 }
