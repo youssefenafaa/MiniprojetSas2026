@@ -188,15 +188,18 @@ const trips = [
  
 
 function affichtraj(){
-    for(let i=0; i<=trips.length-1;i++){
-        console.log("id:"+ trips[i].id);
-        console.log("depar:"+ trips[i].departure );
-        console.log("destination:"+ trips[i].destination);
-        console.log("depar Time:"+trips[i].departureTime);
-        console.log("arrival Time :"+ trips[i].arrivalTime);
-        console.log("price:"+ trips[i].price );
-        console.log("availableseats:"+trips[i].availableSeats)
-    }
+//   for(let i=0; i<=trips.length-1;i++){
+//         console.log("id:"+ trips[i].id);
+//         console.log("depar:"+ trips[i].departure );
+//         console.log("destination:"+ trips[i].destination);
+//         console.log("depar Time:"+trips[i].departureTime);
+//         console.log("arrival Time :"+ trips[i].arrivalTime);
+//         console.log("price:"+ trips[i].price );
+//         console.log("availableseats:"+trips[i].availableSeats)
+//         console.log("=====================================================");
+//     }
+
+console.table(trips);
 }
 
 function achetticket(){
@@ -363,7 +366,7 @@ function trietrajets(){
     }
     } 
   }
-console.log(trips);
+console.table(trips);
 
 
 
@@ -403,7 +406,7 @@ function nombreTotaleticketsvendu(){
 }
 function chifffreAffaireTotal(){
     let totale=0;
-    for(i=0;i<=tickets.length-1;i++){
+    for(let i=0;i<=tickets.length-1;i++){
         totale+=tickets[i].price;
     }
     console.log("chaiffr d'affaire total :"+totale);
