@@ -367,10 +367,31 @@ console.log(trips);
 
 
 
+//bonus
+function statistique(){
+    do{
+console.log("1.Nombre total de tickets vendus");
+console.log("2.Chiffre d'affaires total");
+console.log("3. return  a menu principale");
+console.log("4. Quitter");
 
+st=Number(prompt("taper votre choix entre (1-3)--->"));
 
+switch(st){
+   case 1: nombreTotaleticketsvendu();
+   break;
+   case 2: chifffreAffaireTotal();
+   break;
+   case 3: main();
+    break;
+    case 4:
+        break;
+       default :
+console.log("votre reponse n'etait pas acceptale, svp donne moi une choix entre (1-3)");
+break;
 
-
+}   
+}while(st!=4);}
 
 
        
