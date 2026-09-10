@@ -270,17 +270,22 @@ function affichticket(){
 function annuleticket(){
     let idannule;
     let fond=false;
+    
+    
     idannule=Number(prompt("enter votre id ---->"))
   
-    for(let i=0;i<=tickets.length-1;i++){
-        if(idannule==tickets[i].id){
+    for( let i=0;i<=tickets.length-1;i++){
+        if(idannule==tickets[i].id){ //ticket qui enter l'utilisateur ==tickets.ID
             fond=true;
-            tickets.splice(i,1);
-            trips[j].availableSeats++;
-            break;
-            
+
+            for(let j=0;j<trips.length;j++){  //availabeseats ++ ;
+                if(tickets[i].tripId==trips[j].id){
+                  trips[j].availableSeats++;
+                break;
                 }
-            
+                }
+               }
+                        tickets.splice(i,1);
             }
           console.log("ticket anulle en succes");
                 
