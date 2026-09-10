@@ -210,7 +210,9 @@ function achetticket(){
      do {
          nom =prompt("nom du passager:")
 }while(nom ==="");
-  //id  du trajet
+ 
+
+     //id  du trajet
 do {
      idtrajet =Number(prompt("id de trajet :"))
 }while(isNaN(idtrajet));
@@ -241,8 +243,8 @@ for ( ;i<=trips.length-1;i++){
    }
          tickets.push(ticket);
          trips[i].availableSeats--;
-console.log("ticket achete en succes");
-console.log(ticket);}
+   console.log("ticket achete en succes");
+   console.log(ticket);}
 else {
     console.log("train complet");
 
@@ -259,7 +261,7 @@ if(v==false){
 
 function affichticket(){
     for (let i=0;i<=tickets.length-1;i++){
-        console.log(tickets[i]);
+        
         console.log(" === TICKETS ===");
 
         console.log("Ticket #" + tickets[i].id);
@@ -269,6 +271,11 @@ function affichticket(){
         console.log ("Prix :"+ tickets[i].price +"DH");
        }
 }
+
+
+
+
+
 
 function annuleticket(){
     let idannule;
@@ -335,6 +342,9 @@ for(let i=0;i<=tickets.length-1;i++){
 
 }
 
+
+
+
 function  filtretrajets(){
 
 let villenom;
@@ -354,6 +364,10 @@ if(trouvee==false){
     console.log("aucun ville de ce nom");
 }
 }
+
+
+
+
 
 function trietrajets(){
     for (let j=0;j<=trips.length-1;j++){
