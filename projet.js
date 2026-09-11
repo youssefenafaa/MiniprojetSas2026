@@ -185,21 +185,22 @@ const trips = [
 ];
 
 
+
  
 
 function affichtraj(){
-//   for(let i=0; i<=trips.length-1;i++){
-//         console.log("id:"+ trips[i].id);
-//         console.log("depar:"+ trips[i].departure );
-//         console.log("destination:"+ trips[i].destination);
-//         console.log("depar Time:"+trips[i].departureTime);
-//         console.log("arrival Time :"+ trips[i].arrivalTime);
-//         console.log("price:"+ trips[i].price );
-//         console.log("availableseats:"+trips[i].availableSeats)
-//         console.log("=====================================================");
-//     }
+  for(let i=0; i<=trips.length-1;i++){
+       console.log("id:"+ trips[i].id);
+         console.log("depar:"+ trips[i].departure );
+         console.log("destination:"+ trips[i].destination);
+         console.log("depar Time:"+trips[i].departureTime);
+         console.log("arrival Time :"+ trips[i].arrivalTime);
+         console.log("price:"+ trips[i].price );
+         console.log("availableseats:"+trips[i].availableSeats)
+         console.log("=====================================================");
+     }
 
-console.table(trips);
+
 }
 
 function achetticket(){
@@ -291,13 +292,17 @@ function annuleticket(){
             for(let j=0;j<trips.length;j++){  //availabeseats ++ ;
                 if(tickets[i].tripId==trips[j].id){
                   trips[j].availableSeats++;
-                break;
+                   break;
                 }
                 }
+                   tickets.splice(i,1);
+                         console.log("ticket anulle en succes");
+                         break;
                }
-                        tickets.splice(i,1);
+                     
             }
-          console.log("ticket anulle en succes");
+         
+          
                 
                        
                     
@@ -380,8 +385,10 @@ function trietrajets(){
     }
     } 
   }
-console.table(trips);
 
+for(let i=0;i<=trips.length-1;i++){
+    console.log(trips[i].departure +"------>"+trips[i].destination +":"+ trips[i].price +"dh")
+}
 
 
 }
