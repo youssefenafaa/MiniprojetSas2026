@@ -220,10 +220,10 @@ do {
 
 
 //pour recherche id du trajet est il exicete 
-let i=0;
+
 let v= false ;
    
-for ( ;i<=trips.length-1;i++){
+for ( let i=0;i<=trips.length-1;i++){
      //premier condition id est il exicete
 
       if(idtrajet==trips[i].id ){
@@ -234,7 +234,7 @@ for ( ;i<=trips.length-1;i++){
     
     //cree  ticket
         let ticket={
-    id: IdCont++,
+    idUtillisateur: IdCont++,
     name:nom,
     tripId:idtrajet,
     trajet:trips[i].departure + "--->" + trips[i].destination,            
@@ -264,7 +264,7 @@ function affichticket(){
         
         console.log(" === TICKETS ===");
 
-        console.log("Ticket #" + tickets[i].id);
+        console.log("Ticket #" + tickets[i].idUtillisateur);
         console.log(" Passager : "+tickets[i].name);
          console.log ("Trajet:"+tickets[i].trajet);
         console.log("Place : "+tickets[i].seatNumber);
@@ -285,7 +285,7 @@ function annuleticket(){
     idannule=Number(prompt("enter votre id ---->"))
   
     for( let i=0;i<=tickets.length-1;i++){
-        if(idannule==tickets[i].id){ //ticket qui enter l'utilisateur ==tickets.ID
+        if(idannule==tickets[i].idUtillisateur){ //ticket qui enter l'utilisateur ==tickets.ID
             fond=true;
 
             for(let j=0;j<trips.length;j++){  //availabeseats ++ ;
@@ -325,7 +325,7 @@ function recherchticket(){
 for(let i=0;i<=tickets.length-1;i++){
     if(nomrech==tickets[i].name){
         
-        console.log("Ticket #" + tickets[i].id);
+        console.log("Ticket #" + tickets[i].idUtillisateur);
         console.log(" Passager : "+tickets[i].name);
         console.log ("Trajet:"+tickets[i].trajet);
         console.log("Place : "+tickets[i].seatNumber);
